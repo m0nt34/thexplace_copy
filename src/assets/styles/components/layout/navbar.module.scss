@@ -1,0 +1,93 @@
+@import "../../breakpoints.scss";
+@import "../../variables.scss";
+.navbar {
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  padding: 24px 0;
+  z-index: 100;
+  .navbar_inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1300px;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 0;
+
+      img {
+        width: 189px;
+
+        @include lg {
+          width: 167px;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+
+      .site_link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+
+        a {
+          display: flex;
+          color: $white;
+
+          justify-content: center;
+          text-decoration: none;
+          padding: 10px 20px;
+          font-size: 20px;
+          font-weight: 600;
+          border-radius: 16px;
+          cursor: pointer;
+          border: none;
+          background-color: transparent;
+          opacity: 0.8;
+          transition: background-color 0.25s, opacity 0.25s;
+
+          &:hover {
+            opacity: 1;
+            background-color: rgba(110, 110, 110, 0.1);
+          }
+
+          @include lg {
+            font-size: 17px;
+            padding: 10px;
+            border-radius: 12px;
+          }
+        }
+      }
+      .auth {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+      }
+    }
+
+    @include lg {
+      padding: 24px 64px;
+    }
+    @include md {
+      padding: 24px 36px;
+    }
+    @include sm {
+      padding: 24px 16px;
+    }
+  }
+}
