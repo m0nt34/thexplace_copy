@@ -1,0 +1,113 @@
+@use "../../breakpoints" as breakpoints;
+@use "../../variables" as *;
+
+.carousel {
+  background-color: $gray-dark;
+  width: 100%;
+  max-width: 1300px;
+  border-radius: 24px;
+  .inside_cont {
+    display: flex;
+    flex-direction: column;
+
+    padding: 64px 80px 80px 80px;
+    img {
+      width: 24px;
+    }
+    .text_area {
+      margin-top: 21px;
+      font-size: 44px;
+      color: $white;
+      font-weight: 600;
+      line-height: 52px;
+      min-height: 160px;
+      @include breakpoints.lg {
+        font-size: 32px;
+        line-height: 34px;
+      }
+      @include breakpoints.md {
+        font-size: 28px;
+        line-height: 32px;
+        min-height: 120px;
+      }
+      @include breakpoints.sm {
+        font-size: 20px;
+        line-height: 22px;
+      }
+    }
+    .bottom_cont {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      .person {
+        display: flex;
+        gap: 16px;
+        img {
+          height: 56px;
+          width: 56px;
+        }
+        .person_info {
+          display: flex;
+          flex-direction: column;
+          h5 {
+            font-size: 20px;
+            color: $white;
+          }
+          span {
+            color: $gray;
+            font-weight: 600;
+          }
+        }
+      }
+      .slider_pages {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: fit-content;
+        gap: 40px;
+        .pages {
+          display: flex;
+          gap: 6px;
+          button {
+            border-radius: 999px;
+            border: none;
+            background-color: #27282e;
+            height: 12px;
+            width: 12px;
+            cursor: pointer;
+            &.active {
+              background-color: $green;
+            }
+          }
+        }
+        .next_page_button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #2f3036;
+          height: 56px;
+          width: 56px;
+          border-radius: 999px;
+          border: none;
+          cursor: pointer;
+        }
+        @include breakpoints.breakpoint(880px) {
+          margin-top: 42px;
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+      @include breakpoints.breakpoint(880px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    @include breakpoints.breakpoint(880px) {
+      padding: 64px 32px 26px 32px;
+    }
+    @include breakpoints.sm {
+      padding: 32px 24px 26px 24px;
+    }
+  }
+}

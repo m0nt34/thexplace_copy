@@ -1,4 +1,3 @@
-@import "variables";
-@import "breakpoints.scss";
-
-@import "base";
+@use "variables" as *; 
+@use "breakpoints" as *;
+@use "base" as *;

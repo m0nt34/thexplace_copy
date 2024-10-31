@@ -1,5 +1,5 @@
-@import "../../breakpoints.scss";
-@import "../../variables.scss";
+@use "../../breakpoints" as breakpoints;
+@use "../../variables" as *;
 
 .outer_cont {
   display: flex;
@@ -11,6 +11,7 @@
   background: radial-gradient(circle at 400px 20.52%, #380a7c, transparent 24%),
     radial-gradient(circle at 1500px 43.37%, #3c008b, transparent 30%),
     radial-gradient(circle at 50% 50%, #111112, #111112 100%);
+
   .main_cont {
     display: flex;
     justify-content: center;
@@ -21,15 +22,21 @@
 
     .inside_cont {
       position: relative;
-      & .video {
+
+      .video {
         border-radius: 32px;
         width: 100%;
-        aspect-ratio: 2/1;
+        max-width: 1300px;
+        height: 650px;
+        aspect-ratio: 2 / 1;
         object-fit: cover;
-        @include sm {
+        box-shadow: 0 20px 150px 1px #3c008b;
+
+        @include breakpoints.sm {
           box-shadow: 0 20px 150px 1px #3c008b;
         }
       }
+
       .main_content {
         display: flex;
         flex-direction: column;
@@ -37,21 +44,35 @@
         top: 36%;
         left: 5%;
         transform: translateY(-50%);
+
         h1 {
           color: $white;
           font-size: 56px;
           line-height: 56px;
           font-weight: 600;
           margin-bottom: 2px;
+
+          @include breakpoints.lg {
+            font-size: 40px;
+            line-height: 40px;
+          }
+
+          @include breakpoints.sm {
+            font-size: 34px;
+            line-height: 38px;
+          }
         }
+
         .show_words {
           margin: 30px 0 60px 0;
           display: flex;
-          font-size: 21px;
           gap: 10px;
+          font-size: 21px;
+
           .info_text {
             opacity: 0.75;
           }
+
           .words {
             display: flex;
             justify-content: center;
@@ -60,86 +81,72 @@
             overflow: hidden;
             position: relative;
             width: 160px;
-            height: 35px;
+            height: 30px;
             border-bottom: 1px solid $white;
 
             span {
               position: absolute;
-              animation: words 15s linear infinite 0s;
               opacity: 0;
+              animation: words 15s linear infinite;
 
-              &:nth-child(2) {
-                animation-delay: 2.5s;
-              }
-              &:nth-child(3) {
-                animation-delay: 5s;
-              }
-              &:nth-child(4) {
-                animation-delay: 7.5s;
-              }
-              &:nth-child(5) {
-                animation-delay: 10s;
-              }
-              &:nth-child(6) {
-                animation-delay: 12.5s;
-              }
-              &:nth-child(7) {
-                animation-delay: 15s;
-              }
+              &:nth-child(2) { animation-delay: 2.5s; }
+              &:nth-child(3) { animation-delay: 5s; }
+              &:nth-child(4) { animation-delay: 7.5s; }
+              &:nth-child(5) { animation-delay: 10s; }
+              &:nth-child(6) { animation-delay: 12.5s; }
+              &:nth-child(7) { animation-delay: 15s; }
+            }
+
+            @include breakpoints.lg {
+              width: 125px;
+              height: 22px;
+            }
+
+            @include breakpoints.sm {
+              width: 110px;
+              height: 20px;
             }
           }
+
+          @include breakpoints.lg {
+            font-size: 16px;
+          }
+
+          @include breakpoints.sm {
+            font-size: 14px;
+          }
         }
+
         .green_btn {
           width: fit-content;
         }
       }
     }
 
-    @include md {
+    @include breakpoints.md {
       padding: 0 36px;
     }
-    @include sm {
+
+    @include breakpoints.sm {
       padding: 0 16px;
     }
   }
 
-  @include lg {
+  @include breakpoints.lg {
     background: radial-gradient(circle at 15% 20%, #3c008b, transparent 39%),
       radial-gradient(circle at 85.57% 43.37%, #3c008b, transparent 39%),
       radial-gradient(circle at 50% 50%, #111112, #111112 100%);
   }
 
-  @include sm {
+  @include breakpoints.sm {
     background: transparent;
   }
 }
 
 @keyframes words {
-  0% {
-    opacity: 0;
-  }
-  5% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  10% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  25% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  26% {
-    opacity: 0;
-  }
-  30% {
-    transform: translateY(-50px);
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+  0%, 80%, 100% { opacity: 0; }
+  5% { opacity: 0; transform: translateY(50px); }
+  10%, 25% { opacity: 1; transform: translateY(0); }
+  26% { opacity: 0; }
+  30% { transform: translateY(-50px); }
 }

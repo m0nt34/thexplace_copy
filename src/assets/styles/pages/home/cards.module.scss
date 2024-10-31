@@ -1,0 +1,102 @@
+@use "../../breakpoints" as breakpoints;
+@use "../../variables" as *;
+
+.Cards {
+  display: flex;
+  gap: 24px;
+  max-width: 1300px;
+  
+  .talent_hiring_cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    border-radius: 24px;
+    background-color: $gray-dark;
+    padding: 64px;
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+          color: $white;
+          font-weight: 500;
+          font-size: 44px;
+          margin-bottom: 8px;
+        }
+
+        img {
+          width: 78px;
+        }
+      }
+
+      p {
+        color: $gray;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+
+    .middle_cont {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        display: flex;
+        list-style: none;
+        gap: 24px;
+        margin-top: 32px;
+
+        .img_cont {
+          height: 64px;
+          aspect-ratio: 1/1;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          h1 {
+            font-size: 24px;
+            color: $white;
+          }
+
+          p {
+            color: $gray;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .bottom_cont {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 32px;
+
+      .greenButton_cont {
+        width: fit-content;
+      }
+
+      .link {
+        color: $white;
+        font-size: 20px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    }
+  }
+
+  @include breakpoints.breakpoint(1100px) {
+    flex-direction: column;
+  }
+}

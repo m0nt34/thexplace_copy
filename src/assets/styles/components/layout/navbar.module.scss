@@ -1,5 +1,6 @@
-@import "../../breakpoints.scss";
-@import "../../variables.scss";
+@use "../../breakpoints" as breakpoints;
+@use "../../variables" as *;
+
 .navbar {
   display: flex;
   position: fixed;
@@ -11,6 +12,7 @@
   height: 52px;
   padding: 24px 0;
   z-index: 100;
+
   .navbar_inner {
     display: flex;
     align-items: center;
@@ -27,7 +29,7 @@
       img {
         width: 189px;
 
-        @include lg {
+        @include breakpoints.lg {
           width: 167px;
         }
       }
@@ -65,13 +67,14 @@
             background-color: rgba(110, 110, 110, 0.1);
           }
 
-          @include lg {
+          @include breakpoints.lg {
             font-size: 17px;
             padding: 10px;
             border-radius: 12px;
           }
         }
       }
+
       .auth {
         display: flex;
         justify-content: center;
@@ -80,13 +83,13 @@
       }
     }
 
-    @include lg {
+    @include breakpoints.lg {
       padding: 24px 64px;
     }
-    @include md {
+    @include breakpoints.md {
       padding: 24px 36px;
     }
-    @include sm {
+    @include breakpoints.sm {
       padding: 24px 16px;
     }
   }

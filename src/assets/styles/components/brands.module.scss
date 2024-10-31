@@ -1,0 +1,43 @@
+@use "../breakpoints" as breakpoints;
+@use "../variables" as *;
+
+.brands_cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1300px;
+  width: 100%;
+
+  .show_brands {
+    display: flex;
+    overflow: hidden;
+    gap: 8px;
+
+    div {
+      animation: 70s slide infinite linear;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $gray-dark;
+      padding: 24px;
+      width: 218px;
+      height: 108px;
+      border-radius: 24px;
+      flex-shrink: 0;
+
+      img {
+        max-width: 218px;
+        max-height: 108px;
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-3600%);
+  }
+}

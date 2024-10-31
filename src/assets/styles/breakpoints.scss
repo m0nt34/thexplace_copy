@@ -21,3 +21,10 @@ $breakpoints: (
     @content;
   }
 }
+
+@mixin breakpoint($bp:0){
+  @media (max-width:$bp) {
+    @content;
+  }
+  
+}

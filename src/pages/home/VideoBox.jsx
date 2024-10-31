@@ -26,9 +26,9 @@ const VideoBox = () => {
               <br />
               and game changers unite
             </h1>
-            <div class={style.show_words}>
+            <div className={style.show_words}>
               <span className={style.info_text}>Find the best</span>
-              <div class={style.words}>
+              <div className={style.words}>
                 <span>game designers</span>
                 <span>opportunities</span>
                 <span>game producers</span>
@@ -36,11 +36,12 @@ const VideoBox = () => {
                 <span>engineers</span>
                 <span>jobs</span>
               </div>
-              <span className={style.info_text}>in the video game industry</span>
+              <span className={style.info_text}>
+                in the video game industry
+              </span>
             </div>
             <div className={style.green_btn}>
-
-            <GreenButton text="Join early access" link="/" />
+              <GreenButton text="Join early access" link="/" />
             </div>
           </div>
         </div>
