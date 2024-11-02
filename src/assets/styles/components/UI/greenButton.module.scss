@@ -1,5 +1,6 @@
-@import "../../variables.scss";
-@import "../../breakpoints.scss";
+@use "../../breakpoints.scss" as breakpoints;
+@use "../../variables.scss" as *;
+
 .greenButton {
   background-color: $green;
   border: none;
@@ -15,15 +16,30 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 20px;
-    @include lg {
+    @include breakpoints.lg {
       font-size: 17px;
+    }
+    @include breakpoints.md {
+      font-size: 15px;
+    }
+    @include breakpoints.sm {
+      font-size: 13px;
     }
   }
   &:hover {
     box-shadow: 0px 0px 20px rgba(0, 255, 64, 0.5) !important;
   }
-  @include lg {
+
+  @include breakpoints.lg {
     padding: 10px 20px;
     border-radius: 12px;
+  }
+  @include breakpoints.md {
+    padding: 8px 16px;
+    border-radius: 10px;
+  }
+  @include breakpoints.sm {
+    padding: 6px 12px;
+    border-radius: 8px;
   }
 }

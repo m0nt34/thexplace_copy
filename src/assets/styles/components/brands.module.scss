@@ -28,6 +28,33 @@
       img {
         max-width: 218px;
         max-height: 108px;
+        @include breakpoints.md {
+          max-width: 163.5px;
+          max-height: 81px;
+        }
+        @include breakpoints.sm {
+          max-width: 109px;
+          max-height: 54px;
+        }
+        @include breakpoints.xs {
+          max-width: 54px;
+          max-height: 27px;
+        }
+      }
+      @include breakpoints.md {
+        width: 163.5px;
+        height: 81px;
+        border-radius: 20px;
+      }
+      @include breakpoints.sm {
+        width: 109px;
+        height: 54px;
+        border-radius: 16px;
+      }
+      @include breakpoints.xs {
+        width: 54px;
+        height: 27px;
+        border-radius: 12px;
       }
     }
   }

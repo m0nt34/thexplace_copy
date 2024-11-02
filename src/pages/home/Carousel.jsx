@@ -27,6 +27,9 @@ const Carousel = () => {
             <div className={style.pages}>
               {pages.map((i) => (
                 <button
+                  onClick={() => {
+                    setPage(i);
+                  }}
                   key={i}
                   className={page === i ? style.active : null}
                 ></button>

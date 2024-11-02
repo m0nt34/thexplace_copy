@@ -27,7 +27,7 @@ const NavBar = () => {
             <a>Blog</a>
           </li>
           <li className={style.auth}>
-            <Link></Link>
+            <Link className={style.sign_in}>Sign In</Link>
             <GreenButton text="Join" />
           </li>
         </ul>

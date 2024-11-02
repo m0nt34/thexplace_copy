@@ -10,9 +10,21 @@
   justify-content: center;
   width: 100%;
   height: 52px;
-  padding: 24px 0;
+  padding: 16px 0;
   z-index: 100;
+  animation: navAnimation linear;
+  animation-timeline: scroll();
+  animation-range: 0 50vh;
+  background-color: rgba(17, 17, 18, 0.95);
 
+  @keyframes navAnimation {
+    from {
+      background-color: rgba(17, 17, 18, 0);
+    }
+    to {
+      background-color: rgba(17, 17, 18, 0.95);
+    }
+  }
   .navbar_inner {
     display: flex;
     align-items: center;
@@ -32,6 +44,12 @@
         @include breakpoints.lg {
           width: 167px;
         }
+        @include breakpoints.md {
+          width: 145px;
+        }
+        @include breakpoints.breakpoint(800px) {
+          width: 100px;
+        }
       }
     }
 
@@ -49,7 +67,6 @@
         a {
           display: flex;
           color: $white;
-
           justify-content: center;
           text-decoration: none;
           padding: 10px 20px;
@@ -61,7 +78,7 @@
           background-color: transparent;
           opacity: 0.8;
           transition: background-color 0.25s, opacity 0.25s;
-
+          white-space: nowrap;
           &:hover {
             opacity: 1;
             background-color: rgba(110, 110, 110, 0.1);
@@ -72,6 +89,15 @@
             padding: 10px;
             border-radius: 12px;
           }
+          @include breakpoints.md {
+            font-size: 15px;
+            padding: 8px;
+            border-radius: 10px;
+          }
+          @include breakpoints.breakpoint(800px) {
+            font-size: 12px;
+            padding: 11px 8px;
+          }
         }
       }
 
@@ -80,17 +106,63 @@
         justify-content: center;
         align-items: center;
         list-style: none;
+        gap: 8px;
+        .sign_in {
+          text-decoration: none;
+          white-space: nowrap;
+          opacity: 0.8;
+          transition: background-color 0.25s, opacity 0.25s;
+          color: $white;
+          font-weight: 600;
+          background-color: rgba(204, 204, 204, 0);
+          font-size: 20px;
+          border: 2px solid rgba(204, 212, 255, 0.11);
+          border-radius: 12px;
+          padding: 10px 20px;
+          &:hover {
+            background-color: rgb(204, 204, 204, 0.05);
+            opacity: 1;
+          }
+
+          @include breakpoints.lg {
+            font-size: 17px;
+            padding: 10px 20px;
+            border-radius: 12px;
+          }
+          @include breakpoints.md {
+            font-size: 15px;
+            padding: 8px 16px;
+            border-radius: 10px;
+          }
+          @include breakpoints.sm {
+            font-size: 13px;
+            padding: 6px 12px;
+            border-radius: 8px;
+          }
+        }
+        @include breakpoints.md {
+          gap: 5px;
+        }
+        @include breakpoints.breakpoint(800px) {
+          gap: 4px;
+        }
+      }
+      @include breakpoints.md {
+        gap: 5px;
+      }
+      @include breakpoints.breakpoint(800px) {
+        gap: 2px;
       }
     }
 
     @include breakpoints.lg {
-      padding: 24px 64px;
+      padding: 16px 64px;
     }
     @include breakpoints.md {
-      padding: 24px 36px;
+      padding: 16px 36px;
     }
     @include breakpoints.sm {
-      padding: 24px 16px;
+      padding: 16px 16px;
     }
   }
 }
