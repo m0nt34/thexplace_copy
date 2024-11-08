@@ -28,7 +28,7 @@ const NavBar = () => {
           </li>
           <li className={style.auth}>
             <Link className={style.sign_in}>Sign In</Link>
-            <GreenButton text="Join" />
+            <GreenButton text="Join"/>
           </li>
         </ul>
       </div>

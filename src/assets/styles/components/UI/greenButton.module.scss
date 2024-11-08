@@ -25,6 +25,12 @@
     @include breakpoints.sm {
       font-size: 13px;
     }
+    @include breakpoints.breakpoint(500px) {
+      font-size: 12px;
+    }
+    @include breakpoints.xs {
+      font-size: 10px;
+    }
   }
   &:hover {
     box-shadow: 0px 0px 20px rgba(0, 255, 64, 0.5) !important;
@@ -41,5 +47,13 @@
   @include breakpoints.sm {
     padding: 6px 12px;
     border-radius: 8px;
+  }
+  @include breakpoints.breakpoint(500px) {
+    padding: 5px 11px;
+    border-radius: 7px;
+  }
+  @include breakpoints.xs {
+    padding: 4px 10px;
+    border-radius: 6px;
   }
 }

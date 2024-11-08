@@ -7,7 +7,7 @@
   width: calc(100% - 128px);
   margin: 144px 0 32px 0;
   max-width: 1300px;
-  
+
   @include breakpoints.md {
     width: calc(100% - 72px);
     padding: 0 36px;
@@ -39,8 +39,8 @@
         span {
           color: $gray;
           font-weight: 700;
-      
-          @include breakpoints.breakpoint(400px){
+
+          @include breakpoints.breakpoint(400px) {
             display: none;
           }
         }
@@ -59,13 +59,19 @@
             font-weight: 700;
             text-decoration: none;
             cursor: pointer;
-            &:hover{
+            &:hover {
               color: $white;
             }
-            @include breakpoints.sm{
+            @include breakpoints.sm {
               font-size: 13px;
             }
           }
+          &:nth-child(2) {
+            @include breakpoints.xs {
+              display: none;
+            }
+          }
+        
         }
         .last_box {
           display: flex;
@@ -86,21 +92,18 @@
           @include breakpoints.lg {
             flex-direction: column;
           }
-          @include breakpoints.xs{
-            display: none;
-          }
         }
       }
     }
-    @include breakpoints.lg{
+    @include breakpoints.lg {
       padding: 66px 64px 85px 64px;
     }
-    
-    @include breakpoints.md{
+
+    @include breakpoints.md {
       padding: 62px 40px 44px 40px;
     }
 
-    @include breakpoints.sm{
+    @include breakpoints.sm {
       padding: 40px 24px 44px 24px;
     }
   }

@@ -6,9 +6,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const GlowEffect = ({
   children,
-  glowColor = "rgba(255, 165, 0, 0.8)",
-  className,
-  maxGlow = 125
+  glowColor = "rgba(122, 109, 252, 0.7)",
+  className = "glow_box",
+  maxGlow = 125,
 }) => {
   const boxRef = useRef(null);
 

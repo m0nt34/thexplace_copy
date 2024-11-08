@@ -41,7 +41,7 @@ const VideoBox = () => {
               </span>
             </div>
             <div className={style.green_btn}>
-              <GreenButton text="Join early access" link="/" />
+              <GreenButton text="Join early access"/>
             </div>
           </div>
         </div>

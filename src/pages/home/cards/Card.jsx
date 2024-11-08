@@ -61,7 +61,7 @@ const Card = ({
       </ul>
       <div className={style.bottom_cont}>
         <div className={style.greenButton_cont}>
-          <GreenButton text={greenButtonText} link="/join" />
+          <GreenButton text={greenButtonText}/>
         </div>
         <a className={style.link} href={link}>Learn more →</a>
       </div>

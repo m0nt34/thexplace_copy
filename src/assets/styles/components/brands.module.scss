@@ -6,10 +6,10 @@
   align-items: center;
   justify-content: center;
   max-width: 1300px;
-  width: 100%;
-
+  box-sizing: border-box; 
   .show_brands {
     display: flex;
+    width: 100%;
     overflow: hidden;
     gap: 8px;
 
