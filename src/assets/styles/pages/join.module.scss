@@ -1,0 +1,172 @@
+@use "../variables.scss" as *;
+@use "../breakpoints.scss" as breakpoints;
+
+.join {
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .header_img {
+    z-index: 100;
+    width: 156px;
+    margin: 104px 0 64px 0;
+  }
+  .background {
+    box-sizing: border-box;
+    border-width: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgb(66, 26, 226) 33.5%,
+      rgb(59, 17, 75) 71%,
+      rgb(17, 17, 18) 100%
+    );
+    width: 1736px;
+    height: 1736px;
+    top: calc(-1163px);
+    @include breakpoints.breakpoint(768px) {
+      width: 1479px;
+      height: 1479px;
+      top: calc(-991px);
+    }
+    @include breakpoints.breakpoint(640px) {
+      width: 1072px;
+      height: 1072px;
+      top: calc(-637px);
+    }
+    @include breakpoints.breakpoint(500px) {
+      width: 588px;
+      height: 588px;
+      top: calc(-310px);
+    }
+  }
+  .card {
+    margin-bottom: 144px;
+    z-index: 100;
+    overflow: hidden;
+    border-radius: 24px;
+    max-width: 720px;
+    width: 100%;
+    header {
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 200px;
+      border-width: 0;
+      background-image: url("https://production-thexplace-static-content.s3.us-west-1.amazonaws.com/images/onboarding-header-background.png");
+      background-size: cover;
+      background-position: center center;
+      h1 {
+        color: $white;
+        font-size: 36px;
+        line-height: 44px;
+        @include breakpoints.sm {
+          font-size: 26px;
+          line-height: 34px;
+          margin-top: 28px;
+        }
+      }
+      img {
+        @include breakpoints.sm {
+          height: 144px;
+          width: 144px;
+        }
+      }
+      @include breakpoints.sm {
+        height: 240px;
+        flex-direction: column;
+      }
+    }
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      background-color: $gray-dark;
+      padding: 56px 96px 88px 96px;
+      gap: 32px;
+      @include breakpoints.sm {
+        padding: 36px 52px 56px 52px;
+      }
+      @include breakpoints.xs {
+        padding: 32px 36px 56px 36px;
+      }
+      h2 {
+        font-size: 20px;
+        color: $white;
+        font-weight: 500;
+        text-align: center;
+        @include breakpoints.sm {
+          font-size: 16px;
+        }
+      }
+      .choices {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+        .choice {
+          background-color: rgba(189, 200, 255, 0.05);
+          height: 80px;
+          width: 100%;
+          border-radius: 8px;
+          cursor: pointer;
+          &:hover {
+            background-color: rgba(199, 199, 255, 0.21);
+          }
+          .choice_inside_cont {
+            padding: 8px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-items: center;
+            height: 64px;
+            @include breakpoints.xs {
+              padding: 8px 26px;
+            }
+            div {
+              display: flex;
+              align-items: center;
+              gap: 24px;
+              span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 999px;
+                height: 40px;
+                width: 40px;
+                border-radius: 999;
+                background: radial-gradient(
+                  150% 100% at 0% 100%,
+                  #9b36b5 0%,
+                  #db4dff 100%
+                );
+              }
+              .company_svg {
+                background: radial-gradient(
+                  150% 100% at 0% 100%,
+                  #5448db 0%,
+                  #8a80ff 100%
+                );
+              }
+              p {
+                font-size: 17px;
+                font-weight: 700;
+                color: $white;
+                @include breakpoints.sm {
+                  font-size: 15px;
+                }
+                @include breakpoints.xs {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

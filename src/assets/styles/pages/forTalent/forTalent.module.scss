@@ -17,9 +17,14 @@
 
     @include breakpoints.md {
       width: calc(100% - 72px);
+      gap: 100px;
     }
     @include breakpoints.sm {
       width: calc(100% - 32px);
+      gap: 64px;
+    }
+    @include breakpoints.xs {
+      gap: 24px;
     }
   }
   @include breakpoints.sm {
@@ -63,13 +68,24 @@
   padding: 80px;
   background-color: $gray-dark;
   border-radius: 24px;
+  margin-bottom: 144px;
   h1 {
     width: 25%;
     font-size: 44px;
     font-weight: 600;
     color: $white;
-    @include breakpoints.lg{
-     width: 100%;
+    @include breakpoints.lg {
+      width: 100%;
+      font-size: 36px;
+    }
+    @include breakpoints.md {
+      font-size: 28px;
+    }
+    @include breakpoints.sm {
+      font-size: 24px;
+    }
+    @include breakpoints.xs {
+      font-size: 20px;
     }
   }
   .right {
@@ -89,6 +105,18 @@
           font-weight: 700;
           color: $white;
           height: 85px;
+          @include breakpoints.lg {
+            font-size: 22px;
+          }
+          @include breakpoints.md {
+            font-size: 20px;
+          }
+          @include breakpoints.sm {
+            font-size: 18px;
+          }
+          @include breakpoints.breakpoint(500px) {
+            font-size: 16px;
+          }
         }
         button {
           background-color: transparent;
@@ -107,17 +135,41 @@
           font-size: 20px;
           font-weight: 700;
           color: $mid-gray;
+          @include breakpoints.lg {
+            font-size: 18px;
+          }
+          @include breakpoints.md {
+            font-size: 16px;
+          }
+          @include breakpoints.sm {
+            padding: 6px 0 12px 0;
+            font-size: 14px;
+          }
+          @include breakpoints.breakpoint(500px) {
+            font-size: 12px;
+          }
+          @include breakpoints.xs {
+            font-size: 10px;
+            padding: 0 0 12px 0;
+          }
         }
       }
     }
-    @include breakpoints.lg{
+    @include breakpoints.lg {
       width: 100%;
-
-     }
+    }
   }
-  @include breakpoints.lg{
+  @include breakpoints.lg {
     flex-direction: column;
     gap: 16px;
     padding: 40px;
+    margin-bottom: 100px;
+  }
+  @include breakpoints.md {
+    padding: 32px;
+    margin-bottom: 64px;
+  }
+  @include breakpoints.sm {
+    margin-bottom: 44px;
   }
 }

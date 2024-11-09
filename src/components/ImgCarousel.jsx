@@ -121,7 +121,7 @@ const ImgCarousel = ({
       <div
         className={style.inside_cont}
         style={
-          shadows
+          shadows.active
             ? {
                 transition: "box-shadow 0.3s",
                 boxShadow: shadows.shadow[currentIndex],

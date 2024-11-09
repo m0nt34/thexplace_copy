@@ -21,7 +21,7 @@ const Answear = ({ question = "", answear = "" }) => {
       <div
         className={style.description}
         style={{
-          maxHeight: open ? "500px" : "0",
+          maxHeight: open ? "350px" : "0",
           transition: "max-height 0.5s ease-out",
         }}
       >

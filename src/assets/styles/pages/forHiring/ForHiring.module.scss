@@ -1,0 +1,142 @@
+@use "../../variables.scss" as *;
+@use "../../breakpoints.scss" as breakpoints;
+
+.forHiring_cont {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 100px;
+  .inside_cont {
+    display: flex;
+    flex-direction: column;
+    gap: 144px;
+
+    max-width: 1300px;
+
+    width: calc(100% - 128px);
+
+    @include breakpoints.md {
+      width: calc(100% - 72px);
+      gap: 100px;
+    }
+    @include breakpoints.sm {
+      width: calc(100% - 32px);
+      gap: 64px;
+    }
+    @include breakpoints.xs {
+      gap: 24px;
+    }
+  }
+  @include breakpoints.sm {
+    padding-top: 80px;
+  }
+}
+.header1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 28px;
+  h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: $white;
+    @include breakpoints.sm {
+      font-size: 16px;
+    }
+    @include breakpoints.breakpoint(500px) {
+      font-size: 12px;
+    }
+    @include breakpoints.xs {
+      font-size: 10px;
+    }
+  }
+  @include breakpoints.sm {
+    margin-bottom: 16px;
+  }
+}
+.header2,
+.header3,
+.header4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+  margin-bottom: 50px;
+  h1 {
+    font-size: 44px;
+    font-weight: 600;
+    color: $white;
+    @include breakpoints.md {
+      font-size: 32px;
+    }
+    @include breakpoints.sm {
+      font-size: 26px;
+    }
+    @include breakpoints.breakpoint(500px) {
+      font-size: 20px;
+    }
+    @include breakpoints.xs {
+      font-size: 16px;
+    }
+  }
+  p {
+    font-size: 20px;
+    color: $gray;
+    font-weight: 600;
+    @include breakpoints.md {
+      font-size: 18px;
+    }
+    @include breakpoints.sm {
+      font-size: 16px;
+    }
+    @include breakpoints.breakpoint(500px) {
+      font-size: 12px;
+    }
+    @include breakpoints.xs {
+      font-size: 9px;
+    }
+  }
+  @include breakpoints.sm {
+    gap: 4px;
+    margin-bottom: 20px;
+  }
+}
+.small_cards {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  .top,
+  .bottom {
+    display: flex;
+    gap: 6px;
+    @include breakpoints.breakpoint(850px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.header3 {
+  margin-bottom: 80px;
+  @include breakpoints.md {
+    margin-bottom: 60px;
+  }
+  @include breakpoints.sm {
+    margin-bottom: 50px;
+  }
+  @include breakpoints.breakpoint(500px) {
+    margin-bottom: 40px;
+  }
+  @include breakpoints.xs {
+    margin-bottom: 30px;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}

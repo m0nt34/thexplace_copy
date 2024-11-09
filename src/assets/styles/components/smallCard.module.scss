@@ -19,16 +19,39 @@
     h3 {
       font-size: 20px;
       color: $white;
+      @include breakpoints.breakpoint(500px)  {
+        font-size: 18px;
+      }
     }
     p {
       color: $gray;
       font-weight: 600;
+
+      @include breakpoints.md {
+        font-size: 14px;
+      }
+      @include breakpoints.breakpoint(850px)  {
+        font-size: 16px;
+      }
+      @include breakpoints.breakpoint(500px)  {
+        font-size: 14px;
+      }
     }
   }
+  
+  @include breakpoints.md {
+    padding: 18px 18px 28px 18px;
+  }
   @include breakpoints.breakpoint(850px) {
+    padding: 24px 24px 32px 24px;
     width: auto;
   }
   @include breakpoints.sm {
     padding: 24px 24px 32px 24px;
+    gap: 28px;
+  }
+  @include breakpoints.xs {
+    padding: 18px 18px 28px 18px;
+    gap: 16px;
   }
 }

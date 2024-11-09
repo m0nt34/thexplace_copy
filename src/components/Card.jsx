@@ -10,7 +10,7 @@ const Card = ({
   reverse = false,
 }) => {
   return (
-    <GlowEffect className={style.card} maxGlow={195}>
+    <GlowEffect className={style.card} maxGlow={160}>
       <div className={reverse ? style.inside_cont : style.inside_cont_reverse}>
         <div className={style.second}>
           <img src={img} alt="" />
