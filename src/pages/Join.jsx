@@ -5,7 +5,13 @@ const Join = () => {
   return (
     <div className={style.join}>
       <div className={style.background}></div>
-      <img className={style.header_img} src="https://thexplace.ai/wp-content/themes/thexplace/images/thexplace-logo.svg" alt="" />
+      <a className={style.header_img} href="/">
+        <img
+          
+          src="https://thexplace.ai/wp-content/themes/thexplace/images/thexplace-logo.svg"
+          alt=""
+        />
+      </a>
       <div className={style.card}>
         <header>
           <h1>
@@ -73,8 +79,8 @@ const Join = () => {
                 </div>
                 <svg viewBox="0 0 16 16" height="16px" width="16px">
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M.293.293a1 1 0 0 1 1.414 0L7.414 6l-5.707 5.707a1 1 0 0 1-1.414-1.414L4.586 6 .293 1.707a1 1 0 0 1 0-1.414Z"
                     fill="white"
                   ></path>
