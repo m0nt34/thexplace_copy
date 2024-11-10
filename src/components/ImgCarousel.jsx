@@ -79,15 +79,32 @@ const ImgCarousel = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const imgRefs = useRef([]);
 
+
+  const safeImgs = imgs.length ? imgs : ["fallbackImage.jpg"];
+  const safeTexts = texts.length
+    ? texts
+    : [
+        {
+          name: "Default Name",
+          specialized: "Specialization",
+          location: "Location",
+          m1: "Text 1",
+          m2: "Text 2",
+        },
+      ];
+
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % imgs.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % safeImgs.length);
     }, 5000);
 
     return () => clearInterval(intervalId);
-  }, [imgs.length]);
+  }, [safeImgs.length]);
 
   useEffect(() => {
+    const previousIndex =
+      currentIndex === 0 ? safeImgs.length - 1 : currentIndex - 1;
+
     gsap.set(imgRefs.current[currentIndex], { zIndex: 3 });
     const currentAnim = gsap.fromTo(
       imgRefs.current[currentIndex],
@@ -99,23 +116,19 @@ const ImgCarousel = ({
       }
     );
 
-    gsap.set(imgRefs.current[currentIndex - 1 === -1 ? 5 : currentIndex - 1], {
-      zIndex: 2,
+    gsap.set(imgRefs.current[previousIndex], { zIndex: 2 });
+    const previousAnim = gsap.to(imgRefs.current[previousIndex], {
+      xPercent: -100,
+      duration: 2,
+      ease: "power2.inOut",
     });
-    const previousAnim = gsap.to(
-      imgRefs.current[currentIndex - 1 === -1 ? 5 : currentIndex - 1],
-      {
-        xPercent: -100,
-        duration: 2,
-        ease: "power2.inOut",
-      }
-    );
 
     return () => {
       currentAnim.kill();
       previousAnim.kill();
     };
   }, [currentIndex]);
+
   return (
     <div className={style.carousel_cont}>
       <div
@@ -130,12 +143,12 @@ const ImgCarousel = ({
         }
       >
         <div className={style.imgs}>
-          {imgs.map((img, i) => (
+          {safeImgs.map((img, i) => (
             <img
-              key={i}
+              key={img}
               ref={(el) => (imgRefs.current[i] = el)}
               src={img}
-              alt={`carousel-image-${i}`}
+              alt={`carousel-image-${safeTexts[i]?.name || i}`}
               style={{ zIndex: i === currentIndex ? 2 : 0 }}
             />
           ))}
@@ -161,22 +174,22 @@ const ImgCarousel = ({
           {showBottom && (
             <div className={style.bottom}>
               <div className={style.left}>
-                <div className={style.name}>{texts[currentIndex].name}</div>
+                <div className={style.name}>{safeTexts[currentIndex].name}</div>
                 <div className={style.specialized}>
-                  {texts[currentIndex].specialized}
+                  {safeTexts[currentIndex].specialized}
                 </div>
                 <span>
                   <Location />
-                  {texts[currentIndex].location}
+                  {safeTexts[currentIndex].location}
                 </span>
               </div>
               <div className={style.middle}>
                 <X />
               </div>
               <div className={style.right}>
-                {texts[currentIndex].m1}
+                {safeTexts[currentIndex].m1}
                 <br />
-                {texts[currentIndex].m2}
+                {safeTexts[currentIndex].m2}
               </div>
             </div>
           )}
@@ -185,5 +198,4 @@ const ImgCarousel = ({
     </div>
   );
 };
-
 export default ImgCarousel;

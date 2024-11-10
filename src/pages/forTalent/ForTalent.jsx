@@ -1,6 +1,6 @@
 import React from "react";
 import style from "../../assets/styles/pages/forTalent/forTalent.module.scss";
-import ImgCarousel from "../../components/imgCarousel";
+import ImgCarousel from "../../components/ImgCarousel.jsx";
 import { Header1, Header2 } from "./Headers";
 import Brands from "../../components/Brands";
 import Cards from "./Cards";
