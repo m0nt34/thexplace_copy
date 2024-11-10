@@ -1,6 +1,6 @@
 import React from "react";
 import style from "../../assets/styles/pages/forHiring/ForHiring.module.scss";
-import ImgCarousel from "../../components/imgCarousel";
+import ImgCarousel from "../../components/ImgCarousel";
 import { Header } from "./Headers";
 import Brands from "../../components/Brands";
 import SmallCard from "../../components/SmallCard";
