@@ -1,13 +1,20 @@
 @use "../breakpoints" as breakpoints;
 @use "../variables" as *;
 
+@mixin responsiveDimensions($width, $height, $radius) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+}
+
 .brands_cont {
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 1300px;
-  box-sizing: border-box; 
   width: 100%;
+  box-sizing: border-box;
+  
   .show_brands {
     display: flex;
     overflow: hidden;
@@ -20,51 +27,25 @@
       justify-content: center;
       background-color: $gray-dark;
       padding: 24px;
-      width: 218px;
-      height: 108px;
-      border-radius: 24px;
       flex-shrink: 0;
+      @include responsiveDimensions(218px, 108px, 24px);
 
       img {
-        max-width: 218px;
-        max-height: 108px;
-        @include breakpoints.md {
-          max-width: 163.5px;
-          max-height: 81px;
-        }
-        @include breakpoints.sm {
-          max-width: 109px;
-          max-height: 54px;
-        }
-        @include breakpoints.xs {
-          max-width: 54px;
-          max-height: 27px;
-        }
+        max-width: 100%;
+        max-height: 100%;
+        @include breakpoints.md { max-width: 163.5px; max-height: 81px; }
+        @include breakpoints.sm { max-width: 109px; max-height: 54px; }
+        @include breakpoints.xs { max-width: 54px; max-height: 27px; }
       }
-      @include breakpoints.md {
-        width: 163.5px;
-        height: 81px;
-        border-radius: 20px;
-      }
-      @include breakpoints.sm {
-        width: 109px;
-        height: 54px;
-        border-radius: 16px;
-      }
-      @include breakpoints.xs {
-        width: 54px;
-        height: 27px;
-        border-radius: 12px;
-      }
+
+      @include breakpoints.md { @include responsiveDimensions(163.5px, 81px, 20px); }
+      @include breakpoints.sm { @include responsiveDimensions(109px, 54px, 16px); }
+      @include breakpoints.xs { @include responsiveDimensions(54px, 27px, 12px); }
     }
   }
 }
 
 @keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-3600%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-3600%); } 
 }

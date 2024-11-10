@@ -186,7 +186,7 @@
       flex-direction: column;
       z-index: 100;
       align-items: center;
-      
+
       border: none;
       border-radius: 12px;
       animation: navAnimation_phone linear;
@@ -225,61 +225,79 @@
       }
     }
 
-    .links_box {
-      padding: 100px 16px 0 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      position: absolute;
+    .links_phone {
+      position: fixed;
+      top: 0;
       left: 0;
-      top: -20px;
       width: 100%;
       height: 100vh;
+      z-index: 99;
       background-color: rgba(17, 17, 18, 0.95);
-      .site_link {
+
+      .links_box {
+        padding: 100px 16px 0 16px;
         display: flex;
-        align-items: center;
-        width: 90%;
-        list-style: none;
-        transition: background-color 0.25s;
-        border-radius: 8px;
-        cursor: pointer;
-        &:hover{
-          background-color: rgba(204, 212, 255, 0.05);
-        }
-        a {
-          padding: 8px 12px;
+        flex-direction: column;
+        gap: 8px;
+        position: relative;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        top: 20px;
+        width: 100%;
+        height: 100vh;
+        .site_link {
+          display: flex;
+          align-items: center;
           width: 100%;
-          color: $white;
-          text-decoration: none;
-          font-size: 24px;
-          font-weight: 600;
+          list-style: none;
+          transition: background-color 0.25s;
+          border-radius: 8px;
+          cursor: pointer;
+          &:hover {
+            background-color: rgba(204, 212, 255, 0.05);
+          }
+          a {
+            padding: 8px 12px;
+            width: 100%;
+            color: $white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 600;
+            @include breakpoints.xs {
+              font-size: 22px;
+            }
+          }
         }
-      }
-      .auth{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 90%;
-        list-style: none;
-        transition: background-color 0.25s;
-        border-radius: 8px;
-        cursor: pointer;
-        &:hover{
-          background-color: rgba(204, 212, 255, 0.05);
-        }
-        .sign_in{
+        .auth {
           display: flex;
           align-items: center;
           justify-content: center;
-          border: 2px solid rgba(204, 212, 255, 0.11);
-          border-radius: 8px;
-          padding: 5px 0;
           width: 100%;
-          color: $white;
-          text-decoration: none;
-          font-size: 24px;
-          font-weight: 600;
+          list-style: none;
+          transition: background-color 0.25s;
+          border-radius: 8px;
+          margin-bottom: 5px;
+          cursor: pointer;
+          &:hover {
+            background-color: rgba(204, 212, 255, 0.05);
+          }
+          .sign_in {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(204, 212, 255, 0.11);
+            border-radius: 8px;
+            padding: 5px 0;
+            width: 100%;
+            color: $white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 600;
+            @include breakpoints.xs {
+              font-size: 20px;
+            }
+          }
         }
       }
     }

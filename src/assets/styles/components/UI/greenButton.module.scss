@@ -1,40 +1,37 @@
 @use "../../breakpoints.scss" as breakpoints;
 @use "../../variables.scss" as *;
 
+@mixin greenButtonHover {
+  box-shadow: 0px 0px 20px rgba(0, 255, 64, 0.5) !important;
+}
+
 .greenButton {
   background-color: $green;
   border: none;
   border-radius: 16px;
-  list-style: none;
   padding: 12px 24px;
   height: fit-content;
   cursor: pointer;
   transition: box-shadow 0.3s;
   width: 100%;
+  
   a {
     color: $black;
     text-decoration: none;
     font-weight: 600;
     font-size: 20px;
-    @include breakpoints.lg {
-      font-size: 17px;
-    }
-    @include breakpoints.md {
-      font-size: 15px;
-    }
-    @include breakpoints.sm {
-      font-size: 13px;
-    }
-    @include breakpoints.breakpoint(500px) {
-      font-size: 12px;
-    }
-    @include breakpoints.xs {
-      font-size: 10px;
-    }
+    
+    @include breakpoints.lg { font-size: 17px; }
+    @include breakpoints.md { font-size: 15px; }
+    @include breakpoints.sm { font-size: 13px; }
+    @include breakpoints.breakpoint(500px) { font-size: 12px; }
+    @include breakpoints.xs { font-size: 10px; }
   }
+  
   &:hover {
-    box-shadow: 0px 0px 20px rgba(0, 255, 64, 0.5) !important;
+    @include greenButtonHover;
   }
+
   @include breakpoints.lg {
     padding: 10px 20px;
     border-radius: 12px;
@@ -54,6 +51,5 @@
   @include breakpoints.xs {
     padding: 4px 10px;
     border-radius: 6px;
-
   }
 }

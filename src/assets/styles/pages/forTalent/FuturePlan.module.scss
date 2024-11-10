@@ -10,6 +10,7 @@
   align-items: center;
   margin-top: 56px;
   margin-bottom: 144px;
+
   div {
     display: flex;
     flex-direction: column;
@@ -18,62 +19,79 @@
     max-width: 220px;
     width: 100%;
     gap: 32px;
+
     img {
       height: 80px;
       width: 80px;
+
       @include breakpoints.md {
         height: 70px;
         width: 70px;
       }
+
       @include breakpoints.sm {
         height: 60px;
         width: 60px;
       }
+
       @include breakpoints.breakpoint(480px) {
         height: 70px;
         width: 70px;
       }
+
       @include breakpoints.xs {
         height: 65px;
         width: 65px;
       }
     }
+
     .futurePlan_Text {
       color: $white;
       width: 100%;
       font-weight: 700;
       font-size: 32px;
       text-align: center;
+
       span {
         padding: 0 20px;
+
         @include breakpoints.lg {
           padding: 0 10px;
         }
+
         @include breakpoints.breakpoint(1050px) {
           padding: 0;
         }
       }
+
       @include breakpoints.lg {
         font-size: 26px;
       }
+
       @include breakpoints.md {
         font-size: 22px;
       }
+
       @include breakpoints.breakpoint(750px) {
         font-size: 19px;
       }
+
       @include breakpoints.breakpoint(680px) {
         font-size: 18px;
       }
+
       @include breakpoints.sm {
         font-size: 16px;
       }
+
       @include breakpoints.breakpoint(550px) {
         font-size: 14px;
       }
+
       @include breakpoints.breakpoint(480px) {
         font-size: 18px;
       }
+
       @include breakpoints.xs {
         font-size: 16px;
       }
@@ -82,23 +100,27 @@
     @include breakpoints.lg {
       gap: 24px;
     }
+
     @include breakpoints.md {
       gap: 16px;
     }
+
     @include breakpoints.sm {
       gap: 8px;
     }
   }
+
   .arrow {
     @media (max-width: 480px) {
       display: none;
     }
   }
+
   .shortArrow {
     display: none;
 
     @media (max-width: 480px) {
-      display:flex;
+      display: flex;
       align-items: center;
     }
   }
@@ -106,10 +128,12 @@
   @include breakpoints.lg {
     justify-content: space-between;
   }
+
   @include breakpoints.md {
     justify-content: space-between;
     padding: 48px 28px;
   }
+
   @include breakpoints.breakpoint(480px) {
     flex-direction: column;
     gap: 16px;

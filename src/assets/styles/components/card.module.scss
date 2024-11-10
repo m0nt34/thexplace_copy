@@ -1,132 +1,82 @@
 @use "../variables.scss" as *;
 @use "../breakpoints.scss" as breakpoints;
+
 .card {
   width: 100%;
   border-radius: 24px;
   background-color: $gray-dark;
-  .inside_cont,.inside_cont_reverse {
-    display: flex;
 
+  .inside_cont, .inside_cont_reverse {
+    display: flex;
     padding: 170px 80px;
     gap: 50px;
+
     .first {
       width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 20px;
+
       h1 {
         font-size: 44px;
         font-weight: 700;
         color: $white;
-        @include breakpoints.lg {
-          font-size: 40px;
-        }
-        @include breakpoints.sm {
-          font-size: 32px;
-        }
-        @include breakpoints.breakpoint(500px) {
-          font-size: 28px;
-        }
-        @include breakpoints.xs {
-          font-size: 22px;
-        }
-
-        
+        @include breakpoints.lg { font-size: 40px; }
+        @include breakpoints.sm { font-size: 32px; }
+        @include breakpoints.breakpoint(500px) { font-size: 28px; }
+        @include breakpoints.xs { font-size: 22px; }
       }
+
       p {
         font-size: 20px;
         color: $gray;
         font-weight: 700;
-        @include breakpoints.lg {
-          font-size: 16px;
-        }
-        @include breakpoints.sm {
-          font-size: 14px;
-        }
-        @include breakpoints.breakpoint(500px) {
-          font-size: 12px;
-        }
-        @include breakpoints.xs {
-          font-size: 11px;
-        }
+        @include breakpoints.lg { font-size: 16px; }
+        @include breakpoints.sm { font-size: 14px; }
+        @include breakpoints.breakpoint(500px) { font-size: 12px; }
+        @include breakpoints.xs { font-size: 11px; }
       }
+
       .button_cont {
         width: fit-content;
-        @include breakpoints.md {
-          width: 100%;
-          margin-top: 30px;
-        }
-        @include breakpoints.sm {
-          margin-top: 12px;
-        }
-        @include breakpoints.xs {
-          margin-top: 5px;
-        }
+        @include breakpoints.md { width: 100%; margin-top: 30px; }
+        @include breakpoints.sm { margin-top: 12px; }
+        @include breakpoints.xs { margin-top: 5px; }
       }
-      @include breakpoints.lg {
-        width: 55%;
-        gap: 15px;
-      }
-      @include breakpoints.md {
-        width: 100%;
-      }
-      @include breakpoints.sm {
-        gap: 8px;
-      }
-      @include breakpoints.xs {
-        gap: 5px;
-      }
+
+      @include breakpoints.lg { width: 55%; gap: 15px; }
+      @include breakpoints.md { width: 100%; }
+      @include breakpoints.sm { gap: 8px; }
+      @include breakpoints.xs { gap: 5px; }
     }
+
     .second {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 50%;
+
       img {
         width: 100%;
         aspect-ratio: 1/1;
-    
-        @include breakpoints.md {
-          width: 70%;
-        }
-        @include breakpoints.sm {
-          width: 85%;
-        }
+        @include breakpoints.md { width: 70%; }
+        @include breakpoints.sm { width: 85%; }
+      }
 
-      }
-      @include breakpoints.lg {
-        width: 45%;
-      }
-      @include breakpoints.md {
-        width: 100%;
-      }
-    }
-    @include breakpoints.lg {
-      gap: 32px;
-    }
-    @include breakpoints.lg {
-      padding: 100px 60px;
-    }
-    @include breakpoints.md {
-      flex-direction: column;
-      padding: 40px 40px 56px 40px;
-    }
-    @include breakpoints.sm {
-      gap: 16px;
-    }
-    @include breakpoints.breakpoint(500px) {
-      padding: 28px
+      @include breakpoints.lg { width: 45%; }
+      @include breakpoints.md { width: 100%; }
     }
 
-    @include breakpoints.sm {
-      gap: 0px;
-    }
+    @include breakpoints.lg { gap: 32px; padding: 100px 60px; }
+    @include breakpoints.md { flex-direction: column; padding: 40px 40px 56px 40px; }
+    @include breakpoints.sm { gap: 16px; }
+    @include breakpoints.breakpoint(500px) { padding: 28px; }
+    @include breakpoints.sm { gap: 0; }
   }
-  .inside_cont_reverse{
+
+  .inside_cont_reverse {
     flex-direction: row-reverse;
-    @include breakpoints.md {
-      flex-direction: column;
-    }
+    @include breakpoints.md { flex-direction: column; }
   }
 }

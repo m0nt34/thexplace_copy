@@ -1,5 +1,6 @@
 @use "../breakpoints" as breakpoints;
 @use "../variables" as *;
+
 .small_card {
   display: flex;
   flex-direction: column;
@@ -8,50 +9,59 @@
   border-radius: 24px;
   width: 100%;
   gap: 48px;
+
   img {
     height: 80px;
     width: 80px;
   }
+
   div {
     display: flex;
     flex-direction: column;
     gap: 8px;
+
     h3 {
       font-size: 20px;
       color: $white;
-      @include breakpoints.breakpoint(500px)  {
+
+      @include breakpoints.breakpoint(500px) {
         font-size: 18px;
       }
     }
+
     p {
       color: $gray;
       font-weight: 600;
+      font-size: 16px;
 
-      @include breakpoints.md {
-        font-size: 14px;
-      }
-      @include breakpoints.breakpoint(850px)  {
+      @include breakpoints.breakpoint(850px) {
         font-size: 16px;
       }
-      @include breakpoints.breakpoint(500px)  {
+      @include breakpoints.breakpoint(500px) {
+        font-size: 14px;
+      }
+      @include breakpoints.md {
         font-size: 14px;
       }
     }
   }
-  
-  @include breakpoints.md {
-    padding: 18px 18px 28px 18px;
-  }
+
   @include breakpoints.breakpoint(850px) {
-    padding: 24px 24px 32px 24px;
+    padding: 24px;
     width: auto;
   }
+
+  @include breakpoints.md {
+    padding: 18px 18px 28px;
+  }
+
   @include breakpoints.sm {
-    padding: 24px 24px 32px 24px;
+    padding: 24px;
     gap: 28px;
   }
+
   @include breakpoints.xs {
-    padding: 18px 18px 28px 18px;
+    padding: 18px;
     gap: 16px;
   }
 }

@@ -1,41 +1,56 @@
 @use "../../breakpoints" as breakpoints;
 @use "../../variables" as *;
+
 .main_cont {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
-  width: calc(100% - 128px);
   margin: 144px 0 32px 0;
   max-width: 1300px;
+  width: calc(100% - 128px);
 
   @include breakpoints.md {
-    width: calc(100% - 72px);
-    padding: 0 36px;
     margin: 112px 0 32px 0;
+    padding: 0 36px;
+    width: calc(100% - 72px);
   }
   @include breakpoints.sm {
-    width: calc(100% - 32px);
-    padding: 0 16px;
     margin: 80px 0 32px 0;
+    padding: 0 16px;
+    width: calc(100% - 32px);
   }
   @include breakpoints.xs {
     margin: 50px 0 32px 0;
   }
+
   .inside_cont {
     background-color: $gray-dark;
     border-radius: 24px;
-    width: 100%;
     padding: 66px 80px 82px 80px;
+    width: 100%;
+
+    @include breakpoints.lg {
+      padding: 66px 64px 85px 64px;
+    }
+    @include breakpoints.md {
+      padding: 62px 40px 44px 40px;
+    }
+    @include breakpoints.sm {
+      padding: 40px 24px 44px 24px;
+    }
+
     .footer {
       display: flex;
       flex-direction: column;
-      width: 100%;
       gap: 59px;
+      width: 100%;
+
       header {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
         align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
         span {
           color: $gray;
           font-weight: 700;
@@ -45,66 +60,63 @@
           }
         }
       }
+
       .bottom_cont {
         display: flex;
         gap: 47px;
+
         div {
           display: flex;
           flex-direction: column;
           gap: 16px;
           max-width: 220px;
           width: 100%;
+
           a {
             color: $gray;
+            cursor: pointer;
             font-weight: 700;
             text-decoration: none;
-            cursor: pointer;
+
             &:hover {
               color: $white;
             }
+
             @include breakpoints.sm {
               font-size: 13px;
             }
           }
+
           &:nth-child(2) {
             @include breakpoints.xs {
               display: none;
             }
           }
-        
         }
+
         .last_box {
           display: flex;
           flex-direction: row;
-          width: max-content;
           max-width: 440px;
           width: 100%;
+
           .left_cont {
             max-width: 220px;
             width: 100%;
           }
+
           .social_media_cont {
-            max-width: 220px;
-            width: 100%;
             display: flex;
             flex-direction: row;
+            max-width: 220px;
+            width: 100%;
           }
+
           @include breakpoints.lg {
             flex-direction: column;
           }
         }
       }
-    }
-    @include breakpoints.lg {
-      padding: 66px 64px 85px 64px;
-    }
-
-    @include breakpoints.md {
-      padding: 62px 40px 44px 40px;
-    }
-
-    @include breakpoints.sm {
-      padding: 40px 24px 44px 24px;
     }
   }
 }
