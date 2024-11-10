@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <div className={style.navbar}>
       <div className={style.phone_nav}>
-        <a className={style.phone_logo} href="http://localhost:5173/">
+        <a className={style.phone_logo} href="/">
           <img src="https://thexplace.ai/wp-content/uploads/2024/09/thexplace-logo.png" />
         </a>
         <div
@@ -58,7 +58,7 @@ const NavBar = () => {
         )}
       </div>
       <div className={style.navbar_inner}>
-        <a className={style.logo} href="http://localhost:5173/">
+        <a className={style.logo} href="/">
           <img src="https://thexplace.ai/wp-content/uploads/2024/09/thexplace-logo.png" />
         </a>
 
